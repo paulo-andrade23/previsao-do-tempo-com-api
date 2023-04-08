@@ -41,17 +41,17 @@ function onError(error){
 }
 
 function fetchData(){
-    infoTxt.innerText = "Getting weather details...";
-    infoTxt.classList.add("pending");
+    infoTxt.innerText = "Obtendo detalhes do tempo...";
+    infoTxt.classList.add("pendente");
     fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
-        infoTxt.innerText = "Something went wrong";
-        infoTxt.classList.replace("pending", "error");
+        infoTxt.innerText = "algo deu errado";
+        infoTxt.classList.replace("pendente", "error");
     });
 }
 //imagens
 function weatherDetails(info){
     if(info.cod == "404"){
-        infoTxt.classList.replace("pending", "error");
+        infoTxt.classList.replace("pendente", "error");
         infoTxt.innerText = `${inputField.value} Digite um nome válido`;
     }else{
         const city = info.name;
