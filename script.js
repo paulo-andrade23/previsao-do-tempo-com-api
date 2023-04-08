@@ -1,3 +1,4 @@
+//classes
 const wrapper = document.querySelector(".wrapper"),
 inputPart = document.querySelector(".input-part"),
 infoTxt = inputPart.querySelector(".info-txt"),
@@ -22,7 +23,7 @@ locationBtn.addEventListener("click", () =>{
         alert("Seu navegador não suporta API de geolocalização");
     }
 });
-
+//link da api 
 function requestApi(city){
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=24c37890219e8d38372fbe86bd6c4986`;
     fetchData();
@@ -47,7 +48,7 @@ function fetchData(){
         infoTxt.classList.replace("pending", "error");
     });
 }
-
+//imagens
 function weatherDetails(info){
     if(info.cod == "404"){
         infoTxt.classList.replace("pending", "error");
